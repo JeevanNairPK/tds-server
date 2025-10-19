@@ -76,7 +76,7 @@ def generate_content_with_perplexity(prompt: str, model_name: str) -> str or Non
 def generate_code_with_llm(brief: str, checks: List[str]) -> str:
     prompt = f"Create a complete, single-page HTML application.\n\nREQUIREMENTS:\n{brief}\n\nEVALUATION CRITERIA:\n" + "\n".join(f"- {c}" for c in checks) + "\n\nCONSTRAINTS:\n1. SINGLE HTML file with embedded CSS/JS.\n2. Fully functional and production-ready.\n3. Vanilla JS only.\n\nGenerate ONLY the complete HTML code."
     print("🤖 Generating code with Perplexity AI...")
-    generated_code = generate_content_with_perplexity(prompt, "llama-3-70b-instruct")
+    generated_code = generate_content_with_perplexity(prompt, "sonar")
     if generated_code:
         print(f"✅ Code generated successfully ({len(generated_code)} characters)")
         return generated_code
@@ -87,7 +87,7 @@ def generate_code_with_llm(brief: str, checks: List[str]) -> str:
 def generate_readme(task: str, brief: str, checks: List[str]) -> str:
     prompt = f"Create a professional README.md for a project named '{task}'.\n\nDESCRIPTION:\n{brief}\n\nInclude sections for Description, Features, Usage, and License (mentioning MIT)."
     print("📝 Generating README with Perplexity AI...")
-    generated_readme = generate_content_with_perplexity(prompt, "mixtral-8x7b-instruct")
+    generated_readme = generate_content_with_perplexity(prompt, "sonar")
     if generated_readme:
         print("✅ README generated successfully")
         return generated_readme
@@ -181,3 +181,4 @@ def submit_evaluation(url: str, response_data: EvaluationResponse):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001)
+
