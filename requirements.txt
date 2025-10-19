@@ -1,0 +1,23 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+httpx
+requests
+PerplexiPy
+perplexityai
+PyGithub
+pydantic
+PyYAML
+Jinja2
+aiofiles
+asyncio
+starlette
+openai                 # if you want to support OpenAI endpoints in addition to Perplexity
+cryptography           # for optional secret management or token signing
+beautifulsoup4         # for optional HTML parsing or web scraping
+pillow                 # for optional image processing
+pytest                 # for unit testing
+pytest-asyncio         # for async API tests
+mypy                   # for optional static type checking
+ruff                   # fast code linter (optional)
+pre-commit             # for git commit hooks (optional)
